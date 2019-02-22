@@ -25,7 +25,7 @@ import java.io.InputStreamReader;
 public class P2_AddTowNumbers2 {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode head = null;
+        ListNode head = new ListNode(0);
         ListNode p = head;
         int rest = 0;
         while (l1 != null || l2 !=null){
@@ -38,25 +38,29 @@ public class P2_AddTowNumbers2 {
                 val2 = l2.val;
                 l2 = l2.next;
             }
-            p = new ListNode((val1+val2)%10+rest);
+            ListNode pi = new ListNode((val1+val2+rest)%10);
             rest = (val1+val2+rest)/10;
-            p = p.next;
+            p.next = pi;
+            p = pi;
         }
-        return head;
+        if(rest != 0 ){
+            p.next = new ListNode(rest);
+        }
+        return head.next;
     }
 
     public static void main(String[] args){
-        ListNode l1 = new ListNode(2);
-        ListNode l11 = l1.next = new P2.ListNode(4);
-        l11.next = new P2.ListNode(3);
+        ListNode l1 = new ListNode(5);
+//        ListNode l11 = l1.next = new P2.ListNode(4);
+//        l11.next = new P2.ListNode(3);
         ListNode l2 = new ListNode(5);
 //        ListNode p2 = l2;
 //        for(int i = 0;i<9;i++){
 //            p2.next = new ListNode(9);
 //            p2 = p2.next;
 //        }
-        ListNode l22 = l2.next = new P2.ListNode(6);
-        l22.next = new P2.ListNode(4);
+//        ListNode l22 = l2.next = new P2.ListNode(6);
+//        l22.next = new P2.ListNode(4);
         P2_AddTowNumbers2 calc = new P2_AddTowNumbers2();
         ListNode l3 = calc.addTwoNumbers(l1,l2);
         while (l3!= null){
