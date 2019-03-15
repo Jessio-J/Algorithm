@@ -1,8 +1,6 @@
 package P16;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class P16_3SumClosest {
     public int threeSumClosest(int[] nums, int target) {
