@@ -1,6 +1,6 @@
-package P30;
+package P31;
 
-public class P30_NextPermutation2 {
+public class P31_NextPermutation2 {
     public void nextPermutation(int[] nums) {
         int i = nums.length - 2;
         while (i >= 0 && nums[i + 1] <= nums[i]) {

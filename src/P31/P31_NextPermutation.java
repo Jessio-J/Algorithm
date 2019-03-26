@@ -1,4 +1,4 @@
-package P30;
+package P31;
 
 import java.util.Arrays;
 //实现获取下一个排列的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
@@ -11,7 +11,7 @@ import java.util.Arrays;
 //        1,2,3 → 1,3,2
 //        3,2,1 → 1,2,3
 //        1,1,5 → 1,5,1
-public class P30_NextPermutation {
+public class P31_NextPermutation {
     public void nextPermutation(int[] nums) {
         int i = nums.length-1;
         while(i-1>=0&&nums[i-1]>=nums[i]){
