@@ -3,7 +3,7 @@ package P37;
 import java.util.ArrayList;
 import java.util.List;
 
-public class P37_P37_SudokuSolver2 {
+public class P37_SudokuSolver2 {
     public void solveSudoku(char[][] board) {
         List<int[]> blanks = new ArrayList<>(72);
         boolean[][] row = new boolean[9][9];
