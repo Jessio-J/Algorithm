@@ -39,21 +39,25 @@ public class P39_CombinationSum {
         return rlist;
 
     }
-    private void recursion(int[] candi,int index,int lastSum,int target,List<Integer> list){
-        for(int i = index;i<candi.length;i++){
-            if(lastSum+candi[i]==target){
-                list.add(candi[i]);
-                rlist.add(list);
-            }else if(lastSum+candi[i]>target){
-                if(list.size()>0){
-                    int lastNum = list.get(list.size()-1);
-                    list.remove(list.size()-1);
-                    recursion(candi,i+1,lastSum-lastNum,target,list);
-                }
-            }else {
-                list.add(candi[i]);
-                recursion(candi,i,lastSum+candi[i],target,list);
+
+    private void recursion(int[] candi, int index, int lastSum, int target, List<Integer> list) {
+        if (lastSum + candi[index] == target) {
+            list.add(candi[index]);
+            rlist.add(list);
+        } else if (lastSum + candi[index] > target) {
+            if (list.size() > 0&&index+1<candi.length) {
+                int lastNum = list.get(list.size() - 1);
+                list.remove(list.size() - 1);
+                recursion(candi, index + 1, lastSum - lastNum, target, list);
             }
         }
+        for (int i = index; i < candi.length; i++) {
+            if(lastSum+candi[i]<target){
+                list.add(candi[i]);
+                recursion(candi, i, lastSum + candi[i], target, list);
+            }
+        }
+
+
     }
 }
