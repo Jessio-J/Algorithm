@@ -1,6 +1,7 @@
 package P39;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
@@ -31,33 +32,30 @@ import java.util.Stack;
 //        ]
 public class P39_CombinationSum {
     List<List<Integer>> rlist = new ArrayList<>();
+
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        if(candidates==null||candidates.length==0||candidates[0]>target){
-            return null;
+        Arrays.sort(candidates);
+        if (candidates == null || candidates.length == 0 || candidates[0] > target) {
+            return rlist;
         }
-        recursion(candidates,0,0,target,new ArrayList<Integer>());
+        recursion(candidates, 0, 0, target, new ArrayList<Integer>());
         return rlist;
 
     }
 
     private void recursion(int[] candi, int index, int lastSum, int target, List<Integer> list) {
-        if (lastSum + candi[index] == target) {
-            list.add(candi[index]);
-            rlist.add(list);
-        } else if (lastSum + candi[index] > target) {
-            if (list.size() > 0&&index+1<candi.length) {
-                int lastNum = list.get(list.size() - 1);
-                list.remove(list.size() - 1);
-                recursion(candi, index + 1, lastSum - lastNum, target, list);
-            }
-        }
+
         for (int i = index; i < candi.length; i++) {
-            if(lastSum+candi[i]<target){
-                list.add(candi[i]);
-                recursion(candi, i, lastSum + candi[i], target, list);
+            if (lastSum + candi[i] <= target) {
+                List<Integer> listCur = new ArrayList<>(list);
+                listCur.add(candi[i]);
+                recursion(candi, i, lastSum + candi[i], target, listCur);
+            } else if (lastSum + candi[i] > target) {
+                break;
             }
         }
-
-
+        if (lastSum == target) {
+            rlist.add(list);
+        }
     }
 }
