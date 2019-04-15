@@ -14,6 +14,7 @@ import java.util.List;
 //        [1,2,1],
 //        [2,1,1]
 //        ]
+//这个算法有问题
 public class P47_PermutationsII {
     private void swap(int[] nums, int i, int j) {
         int temp = nums[i];
