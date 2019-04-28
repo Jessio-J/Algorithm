@@ -1,9 +1,4 @@
-
-import P38.P38_CountAndSay;
-import P39.P39_CombinationSum;
-import P40.P40_CombinationSumII;
-import P41.P41_FirstMissingPositive;
-import P42.P42_TrappingRainWater;
+import P51TO100.P55.P55_JumpGame3;
 import datastruct.ListNode;
 
 
@@ -40,7 +35,14 @@ public class excuteCenter {
                 {'.','.','.','4','1','9','.','.','5'},
                 {'.','.','.','.','8','.','.','7','9'},
                 };
+        int[][] matrix = {
+                {1,2,3,4},
+                {5,6,7,8},
+                {9,10,11,12},
+                {13,14,15,16}
+        };
 //        new P37_SudokuSolver3().solveSudoku(board);
-        System.out.println("answer:"+new P42_TrappingRainWater().trap(new int[]{5,2,1,2,1,5}));
+//        new P48_RotateImage().rotate(matrix);
+        System.out.println("answer:"+new P55_JumpGame3().canJump(new int[]{1,1,1,0,0,4}));
     }
 }
