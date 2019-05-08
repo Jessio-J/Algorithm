@@ -1,6 +1,6 @@
-package P51TO100.P63.P63;
+package P51TO100.P63;
 
-public class _UniquePathsII {
+public class P63_UniquePathsII {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         if(obstacleGrid==null||obstacleGrid[0][0]==1){
             return 0;
