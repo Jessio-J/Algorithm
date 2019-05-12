@@ -1,4 +1,4 @@
-package jianzhiOffer.p19;
+package jianzhiOffer.P19;
 
 public class P19 {
     public boolean match(char[] str, char[] pattern) {
