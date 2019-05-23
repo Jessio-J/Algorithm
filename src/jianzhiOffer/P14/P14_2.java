@@ -1,4 +1,4 @@
-package jianzhiOffer.p14;
+package jianzhiOffer.P14;
 //贪心算法
 public class P14_2 {
     public int maxProductCutting(int length){
