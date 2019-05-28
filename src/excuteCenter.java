@@ -2,6 +2,9 @@ import P51TO100.P57.P57_InsertInterval;
 import P51TO100.P59.P59_SpiralMatrixII;
 import P51TO100.P60.P60_PermutationSequence2;
 import P51TO100.P61.P61_RotateList;
+import P51TO100.P76.P76;
+import P51TO100.P78.P78;
+import P51TO100.P84.P84;
 import datastruct.ListNode;
 import datastruct.TreeNode;
 import jianzhiOffer.P7.P7;
@@ -49,6 +52,6 @@ public class excuteCenter {
 //        new P37_SudokuSolver3().solveSudoku(board);
 //        new P48_RotateImage().rotate(matrix);
         TreeNode root = new P7().reConstructBinaryTree(new int[]{1,2,4,7,3,5,6,8},new int[] {4,7,2,1,5,3,8,6});
-        System.out.println("answer:"+new P61_RotateList().rotateRight(head,4));
+        System.out.println("answer:"+new P84().largestRectangleArea(new int[]{3,1,4,5,3,2,7,5,3}));
     }
 }
