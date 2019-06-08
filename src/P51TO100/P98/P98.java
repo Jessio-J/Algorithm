@@ -1,4 +1,4 @@
-package P98;
+package P51TO100.P98;
 
 import datastruct.TreeNode;
 
