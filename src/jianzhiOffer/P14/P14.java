@@ -1,4 +1,4 @@
-package jianzhiOffer.p14;
+package jianzhiOffer.P14;
 //动态规划
 public class P14 {
     public int maxProductCutting(int length){
@@ -15,7 +15,7 @@ public class P14 {
         p[3] = 3;
         for(int i=4;i<=length;i++){
             int max = 0;
-            for(int j = 1;j<(i>>1);j++){
+            for(int j = 1;j<=(i>>1);j++){
                 int pt = p[j]*p[i-j];
                 if(max<pt)
                     max = pt;
