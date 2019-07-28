@@ -23,8 +23,6 @@ public class class2 {
             headMap.put(c1,count2+1);
             int count3 = tailMap.get(c2)==null?0:tailMap.get(c2);
             tailMap.put(c2,count3+1);
-//            headMap.put(c1,headMap.getOrDefault(c1,0)+1);
-//            tailMap.put(c2,headMap.getOrDefault(c2,0)+1);
         }
 
 
