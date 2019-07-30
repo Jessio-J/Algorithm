@@ -58,7 +58,7 @@ public class class4 {
                 int maxWi = blocks.get(i).Wi>ways[i-1].maxWi?blocks.get(i).Wi:ways[i-1].maxWi;
                 ways[i] = new Way(ways[i-1].curTotalWi+blocks.get(i).Wi,maxWi,ways[i-1].curHi+1);
                 ways[i].bidList.add(blocks.get(i).id);
-            }else if(blocks.get(i).Wi<ways[i-1].maxWi){
+            }else if(blocks.get(i).Wi<ways[i-1].maxWi&&blocks.get(i).Wi*7>=ways[i-1].curTotalWi-ways[i-1].maxWi){
                 int newMax = 0;
                 for(Iterator<Integer> it = ways[i-1].bidList.iterator();it.hasNext();){
                     Integer integer = it.next();
