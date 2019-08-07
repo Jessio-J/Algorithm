@@ -1,6 +1,7 @@
 package exam.liulishuo.D20190730;
 
 import java.util.*;
+//字符串最短编码，哈夫曼树
 
 public class class1 {
     public static void main(String[] args) {
