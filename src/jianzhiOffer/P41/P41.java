@@ -6,13 +6,7 @@ import java.util.PriorityQueue;
 public class P41 {
     int count;
     PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
-    PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(11, new Comparator<Integer>() {
-        @Override
-        public int compare(Integer o1, Integer o2) {
-            //PriorityQueue默认是小顶堆，实现大顶堆，需要反转默认排序器
-            return o2.compareTo(o1);
-        }
-    });
+    PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(11, Comparator.reverseOrder());
 
     public void Insert(Integer num) {
         count++;
