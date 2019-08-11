@@ -32,13 +32,13 @@ public class class3_2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int cur1[] = new int[n];
-        int cur2[] = new int[n];
+        int years[] = new int[n];
+        int fee[] = new int[n];
         int sum = 0;
         for (int i = 0; i < n; i++) {
-            cur1[i] = sc.nextInt();
+            years[i] = sc.nextInt();
         }
-        PriorityQueue<node> map = new PriorityQueue<>(new Comparator<node>() {
+        PriorityQueue<node> nodes = new PriorityQueue<>(new Comparator<node>() {
             @Override
             public int compare(node o1, node o2) {
                 return o1.val-o2.val;
@@ -46,39 +46,39 @@ public class class3_2 {
         });
         HashSet<Integer> set = new HashSet<>();
         for(int i = 0;i<n;i++){
-            node no = new node(cur1[i],i);
-            map.offer(no);
+            node no = new node(years[i],i);
+            nodes.offer(no);
         }
-        while (!map.isEmpty()){
-            int value = map.peek().val;
+        while (!nodes.isEmpty()){
+            int value = nodes.peek().val;
             ArrayList<Integer> list = new ArrayList<>();
-            while (!map.isEmpty()&&map.peek().val==value){
-                node no = map.poll();
-                int cur = no.key;
-                list.add(cur);
-                if(cur==0){
+            while (!nodes.isEmpty()&&nodes.peek().val==value){
+                node no = nodes.poll();
+                int curIndex = no.key;
+                list.add(curIndex);
+                if(curIndex==0){
                     if(set.contains(1))
-                        cur2[0] = cur2[1]+100;
+                        fee[0] = fee[1]+100;
                     else
-                        cur2[0] = 100;
-                    sum +=cur2[0];
-                }else if(cur==n-1){
+                        fee[0] = 100;
+                    sum +=fee[0];
+                }else if(curIndex==n-1){
                     if(set.contains(n-2))
-                        cur2[n-1] = cur2[n-2]+100;
+                        fee[n-1] = fee[n-2]+100;
                     else
-                        cur2[n-1] = 100;
-                    sum+=cur2[n-1];
+                        fee[n-1] = 100;
+                    sum+=fee[n-1];
                 }else {
-                    if(set.contains(cur-1)&&set.contains(cur+1)){
-                        cur2[cur] = Math.max(cur2[cur-1],cur2[cur+1])+100;
+                    if(set.contains(curIndex-1)&&set.contains(curIndex+1)){
+                        fee[curIndex] = Math.max(fee[curIndex-1],fee[curIndex+1])+100;
 
-                    }else if(set.contains(cur-1))
-                        cur2[cur] = cur2[cur-1]+100;
-                    else if(set.contains(cur+1))
-                        cur2[cur] = cur2[cur+1]+100;
+                    }else if(set.contains(curIndex-1))
+                        fee[curIndex] = fee[curIndex-1]+100;
+                    else if(set.contains(curIndex+1))
+                        fee[curIndex] = fee[curIndex+1]+100;
                     else
-                        cur2[cur] =100;
-                    sum+=cur2[cur];
+                        fee[curIndex] =100;
+                    sum+=fee[curIndex];
                 }
             }
             for(Integer i :list){
