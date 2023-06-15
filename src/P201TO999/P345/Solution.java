@@ -2,8 +2,14 @@ package P201TO999.P345;
 
 import java.util.Arrays;
 import java.util.HashSet;
+/*
+ * @lc app=leetcode.cn id=345 lang=java
+ *
+ * [345] 反转字符串中的元音字母
+ */
 
-public class P345 {
+// @lc code=start
+public class Solution {
     private final static HashSet<Character> vowels = new HashSet<>(
             Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
 
@@ -25,3 +31,4 @@ public class P345 {
         return new String(result);
     }
 }
+// @lc code=end
