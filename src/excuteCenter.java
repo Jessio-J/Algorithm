@@ -1,6 +1,7 @@
 import P101TO150.P125.P125;
 import P101TO150.P128.P128;
 import P201TO999.P345.Solution1;
+import P201TO999.P443.Solution;
 import P51TO100.P57.P57_InsertInterval;
 import P51TO100.P59.P59_SpiralMatrixII;
 import P51TO100.P60.P60_PermutationSequence2;
@@ -20,9 +21,9 @@ import java.util.*;
 
 public class excuteCenter {
     public static void main(String[] args){
-        Solution1 s = new Solution1();
-
-        System.out.println("result : "+s.reverseVowels("LeetCODE"));
+        Solution s =new Solution();
+        char[] chars = {'a','a','a','a','a','b','b','c','c','c'};
+        System.out.println("result : "+s.compress(chars));
 
 
     }
