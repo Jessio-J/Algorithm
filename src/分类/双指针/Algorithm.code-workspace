@@ -1,15 +1,11 @@
 {
-	"folders": [
-		{
-			"path": "../../.."
-		},
-		{
-			"name": ".leetcode",
-			"path": "../../../../../../.leetcode"
-		}
-	],
-	"settings": {
-		"aiXcoder.showTrayIcon": true,
-		"editor.suggest.snippetsPreventQuickSuggestions": false
-	}
+    "settings": {
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "aiXcoder.showTrayIcon": true
+    },
+    "folders": [
+        {
+            "path": "../.."
+        }
+    ]
 }
