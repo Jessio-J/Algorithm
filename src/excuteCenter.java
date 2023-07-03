@@ -25,6 +25,5 @@ public class excuteCenter {
         char[] chars = {'a','a','a','a','a','b','b','c','c','c'};
         System.out.println("result : "+s.compress(chars));
 
-
     }
 }
